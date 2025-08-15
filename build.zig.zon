@@ -1,0 +1,12 @@
+.{
+    .name = .pusu,
+    .version = "0.0.1",
+    .fingerprint = 0x3c3c7abda206733a,
+    .minimum_zig_version = "0.15.0-dev.1519+dd4e25cf4",
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
