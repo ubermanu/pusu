@@ -1,0 +1,41 @@
+{
+  "name": "@ubermanu/pusu",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Emmanuel Vodor <emmanuel.vodor@proton.me>",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "zig-out/bin/pusu",
+    "node"
+  ],
+  "bin": {
+    "pusu": "zig-out/bin/pusu"
+  },
+  "scripts": {
+    "format": "biome format --write node package.json",
+    "prepublish": "zig build",
+    "prepare": "husky"
+  },
+  "exports": {
+    "./node": {
+      "import": "./node/pusu.mjs",
+      "types": "./node/pusu.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "lint-staged": {
+    "*.{js,ts,css,html,json,jsonc}": "biome check --write"
+  },
+  "packageManager": "pnpm@10.14.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "@types/node": "^24.3.0",
+    "@ubermanu/biome-config": "^0.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5"
+  }
+}
